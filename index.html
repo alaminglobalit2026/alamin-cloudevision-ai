@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudVision AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div class="badge">RENDER-BASED CLOUD SERVICE</div>
+      <h1>CloudVision AI</h1>
+      <p>AI-powered image analysis running as a cloud web service.</p>
+    </section>
+
+    <section class="student-card">
+      <div>
+        <span>Student Name</span>
+        <strong>{{ student_name }}</strong>
+      </div>
+      <div>
+        <span>Student ID</span>
+        <strong>{{ student_id }}</strong>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>AI Image Analyzer</h2>
+      <p class="muted">
+        Upload a PNG, JPG, JPEG, or WEBP image. The cloud server sends it
+        to the Gemini API and displays the AI analysis.
+      </p>
+
+      <form method="POST" enctype="multipart/form-data">
+        <label class="upload">
+          <input id="imageInput" type="file" name="image"
+                 accept="image/png,image/jpeg,image/webp" required>
+          <span id="fileName">Choose an image</span>
+        </label>
+        <button type="submit">Analyze with AI</button>
+      </form>
+
+      {% if error %}
+        <div class="message error">{{ error }}</div>
+      {% endif %}
+
+      {% if result %}
+        <div class="result">
+          <h3>AI Analysis Result</h3>
+          <div class="result-text">{{ result }}</div>
+        </div>
+      {% endif %}
+    </section>
+
+    <section class="architecture">
+      <h2>Cloud Architecture</h2>
+      <div class="flow">
+        <div>User Browser</div><b>→</b>
+        <div>Render / Flask</div><b>→</b>
+        <div>Gemini API</div><b>→</b>
+        <div>AI Result</div>
+      </div>
+    </section>
+
+    <footer>
+      <span>Assignment 07 · Cloud Computing</span>
+      <span>Flask · Render · Gemini API</span>
+    </footer>
+  </main>
+
+  <script>
+    const input = document.getElementById("imageInput");
+    const fileName = document.getElementById("fileName");
+    input.addEventListener("change", () => {
+      fileName.textContent = input.files.length
+        ? input.files[0].name
+        : "Choose an image";
+    });
+  </script>
+</body>
+</html>
