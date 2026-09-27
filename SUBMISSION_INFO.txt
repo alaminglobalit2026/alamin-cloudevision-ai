@@ -1,0 +1,24 @@
+ASSIGNMENT 01 — CLOUDVISION AI
+
+Student Name: Al Amin
+Student ID: 2026512806
+Project: CloudVision AI — Render-Based Cloud Service with AI Feature
+
+Included:
+- Complete Flask source code
+- HTML/CSS/JavaScript frontend
+- Gemini AI API integration
+- Render deployment configuration
+- Assignment report
+- Presentation
+- Submission checklist
+
+Final deployment steps:
+1. Upload project files to GitHub.
+2. Create a Render Web Service.
+3. Add GEMINI_API_KEY as a Render Environment Variable.
+4. Deploy and test the live URL.
+5. Add the final Render URL and screenshots to the report if required.
+
+Note: The supplied photo shows page 1 of 2. This package covers all requirements
+visible on page 1. Check page 2 for any additional requirements.
